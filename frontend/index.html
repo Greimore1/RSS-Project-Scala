@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RSS Reader</title>
+  <script>
+    async function fetchRSS() {
+      const url = document.getElementById('rss-url').value;
+
+      try {
+        const response = await fetch(`http://localhost:8080/fetch/${encodeURIComponent(url)}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.text();
+        document.getElementById('rss-content').innerText = data;
+      } catch (error) {
+        document.getElementById('rss-content').innerText = `Error fetching RSS feed: ${error.message}`;
+        console.error(error);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Simple RSS Reader</h1>
+  <input type="text" id="rss-url" placeholder="Enter RSS Feed URL">
+  <button onclick="fetchRSS()">Fetch RSS</button>
+  <pre id="rss-content"></pre>
+</body>
+</html>

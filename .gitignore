@@ -1,0 +1,13 @@
+# sbt
+/target
+/project/target
+/project/project
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea
+*.iml
+*.class
