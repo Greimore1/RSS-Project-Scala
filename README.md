@@ -1,5 +1,5 @@
 ## Overview
-This is a simple RSS Reader built with Scala. The application has a graphical user interface (GUI) using ScalaFX and a backend to fetch and display RSS feed titles.
+This is a simple RSS Reader built with Scala. The application has a GUI using ScalaFX and a backend to fetch and display RSS feed titles.
 
 ## Features
 - Enter an RSS feed URL.
